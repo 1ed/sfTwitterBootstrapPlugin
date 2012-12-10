@@ -17,3 +17,4 @@ all:
     display_top_pagination:       true
     use_icons_in_button:          true
     breadcrumb_root_name:         Home
+    default_form_formatter:       TwitterBootstrap # use null to disable
