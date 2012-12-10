@@ -16,7 +16,10 @@ abstract class sfTwitterModelGeneratorConfiguration extends sfModelGeneratorConf
     $formObject = new $class($object, array_merge($this->getFormOptions(), $options));
 
     $formatterObj = $formObject->getWidgetSchema()->getFormFormatter();
-    $formatterObj->setValidatorSchema($formObject->getValidatorSchema());
+    if ($formatterObj instanceof sfWidgetFormSchemaFormatterTwitterBootstrap)
+    {
+      $formatterObj->setValidatorSchema($formObject->getValidatorSchema());
+    }
 
     return $formObject;
   }
